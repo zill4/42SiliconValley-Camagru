@@ -1,39 +1,101 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import classnames from 'classnames';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
+import Collapse from '@material-ui/core/Collapse';
+import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import blue from '@material-ui/core/colors/blue';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 import './post.css';
+
+const styles = theme => ({
+    card: {
+      maxWidth: 250,
+      maxHeight: 450
+    },
+    media: {
+      height: '50%',
+      width: '50%',
+      paddingTop: '56.25%', // 16:9
+    },
+    actions: {
+      display: 'flex',
+    },
+    expand: {
+      transform: 'rotate(0deg)',
+      marginLeft: 'auto',
+      transition: theme.transitions.create('transform', {
+        duration: theme.transitions.duration.shortest,
+      }),
+    },
+    expandOpen: {
+      transform: 'rotate(180deg)',
+    },
+    avatar: {
+      backgroundColor: blue[200],
+    },
+  });
+
 const Post = props => {
-    return (
-        <article className="Post">
-            <header>
-                <div className="Post-user">
-                    <div className="Post-user-avatar">
-                    <img src="https://cdn.intra.42.fr/users/gaetan.jpg"></img>
-                    </div>
-                    <div className="Post-user-nickname">
-                        <span>Bob</span>
-                    </div>
-                </div>
-            </header>
-            <div className="Post-image">
-                <div className="Post-image-bg">
-                    <img alt="Why is this?" src="https://cdn.intra.42.fr/users/rene.jpg"/>
-                </div>
-                <div className="Token-count">
-                <button>Token</button>
-                    <text>Token Count: 10 </text>
-                </div>
-            </div>
-            <div className="Post-caption">
-                <p>
-                <strong>Bob: </strong>Why is this?
-                </p>
-                <div className="Post-input">
-                <input type="text" placeholder="Comment..."/>
-                <input type="submit" value="Post"/>
-                </div>
-            </div>
-        
-        </article>
-    );
+    const {classes} = props;
+    return (      <Card className={classes.card}>
+        <CardHeader
+          avatar={
+            <Avatar aria-label="Recipe" className={classes.avatar}>
+              JC
+            </Avatar>
+          }
+          action={
+            <IconButton>
+              <MoreVertIcon />
+            </IconButton>
+          }
+          title="What is this?"
+          subheader="September 14, 2016"
+        />
+        <CardMedia
+          className={classes.media}
+          image="https://cdn.intra.42.fr/users/rene.jpg"
+          title="How is this?"
+        />
+        <CardContent>
+          <Typography component="p">
+            Why is this?
+          </Typography>
+        </CardContent>
+        <CardActions className={classes.actions} disableActionSpacing>
+          <IconButton aria-label="Add to favorites">
+            <FavoriteIcon />
+          </IconButton>
+          <IconButton aria-label="Share">
+            <ShareIcon />
+          </IconButton>
+          <IconButton
+            className={classnames(classes.expand)}
+            onClick={()=>console.log('press')}
+            aria-expanded={true}
+            aria-label="Show more"
+          >
+            <ExpandMoreIcon />
+          </IconButton>
+        </CardActions>
+        <Collapse in={true} timeout="auto" unmountOnExit>
+          <CardContent>
+            <Typography paragraph>This is a temporary comment.</Typography>
+
+          </CardContent>
+        </Collapse>
+      </Card>);
 };
 
-export default (Post);
+export default withStyles(styles)(Post);

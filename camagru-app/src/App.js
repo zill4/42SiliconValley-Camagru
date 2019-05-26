@@ -5,23 +5,10 @@ import Profile from './components/Profile/profile.js';
 import Post from './components/Post/post.js';
 import ImageViewer from './components/ImageViewer/imageViewer.js';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Webcam from "react-webcam";
+import CamViewer from './components/CamViewer/camViewer.js';
 
-class  App extends Component{
+class  App extends Component {
 
-
-  Index = () => {
-    return (
-      <ImageViewer />
-    );
-  }
-  
-  About = () => {
-    return (
-      <Webcam />
-    );
-  }
-  
   Users = () => {
     return <h2>Users</h2>;
   }
@@ -45,8 +32,8 @@ class  App extends Component{
           </div>
         </div>
         <div className="main">
-            <Route path="/" exact component={this.Index} />
-            <Route path="/webcam/" component={this.About} />
+            <Route path="/" exact component={ImageViewer} />
+            <Route path="/webcam/" component={CamViewer} />
             <Route path="/users/" component={this.Users} />
         </div>
         </Router>
