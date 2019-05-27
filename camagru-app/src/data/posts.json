@@ -1,0 +1,73 @@
+{
+    "posts":
+    [
+        {
+            "Id" : 1,
+            "Title" : "Temp01",
+            "Image" : "https://cdn.intra.42.fr/users/rene.jpg",
+            "Likes" : 42,
+            "Date" : "20-JUN-1990 08:03",
+            "Comments" : [
+                {
+                    "User" : "someurl.com",
+                    "Comment" : "Is that morty?"
+                },
+                {
+                    "User" : "myurl.com",
+                    "Comment" : "No thats rene!"
+                }
+            ]
+        },
+        {
+            "Id" : 2,
+            "Title" : "Temp02",
+            "Image" : "https://cdn.intra.42.fr/users/gaetan.jpg",
+            "Likes" : 42,
+            "Date" : "20-JUN-1990 08:03",
+            "Comments" : [
+                {
+                    "User" : "someurl.com",
+                    "Comment" : "Is that gaetan?"
+                },
+                {
+                    "User" : "myurl.com",
+                    "Comment" : "whay is this!"
+                }
+            ]
+        },
+        {
+            "Id" : 3,
+            "Title" : "Temp03",
+            "Image" : "https://cdn.intra.42.fr/users/llee.jpg",
+            "Likes" : 42,
+            "Date" : "20-JUN-1990 08:03",
+            "Comments" : [
+                {
+                    "User" : "someurl.com",
+                    "Comment" : "Is that Leo?"
+                },
+                {
+                    "User" : "myurl.com",
+                    "Comment" : "No thats Princess LuLu!"
+                }
+            ]
+        },
+        {
+            "Id" : 4,
+            "Title" : "Temp04",
+            "Image" : "https://cdn.intra.42.fr/users/jcrisp.jpg",
+            "Likes" : 9001,
+            "Date" : "20-JUN-1990 08:03",
+            "Comments" : [
+                {
+                    "User" : "someurl.com",
+                    "Comment" : "Is that Justin?"
+                },
+                {
+                    "User" : "myurl.com",
+                    "Comment" : "No thats Jcrisp!"
+                }
+            ]
+        }
+    ]
+}

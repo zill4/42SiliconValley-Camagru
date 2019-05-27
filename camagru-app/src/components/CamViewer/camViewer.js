@@ -5,9 +5,9 @@ import Webcam from "react-webcam";
 const CamViewer = props => {
     return (
         <div>
-        <Webcam />  
+        <h1>Webcam</h1>
+        <Webcam/>  
         </div>
     );
 };
-
 export default (CamViewer);
