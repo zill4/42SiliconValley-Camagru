@@ -47,7 +47,8 @@ const styles = theme => ({
   });
 
 const Post = props => {
-    const {classes} = props;
+    const {classes, post} = props;
+    console.log(props);
     return (      <Card className={classes.card}>
         <CardHeader
           avatar={
@@ -60,12 +61,12 @@ const Post = props => {
               <MoreVertIcon />
             </IconButton>
           }
-          title="What is this?"
-          subheader="September 14, 2016"
+          title = {post.Title}
+          subheader= {post.Date}
         />
         <CardMedia
           className={classes.media}
-          image="https://cdn.intra.42.fr/users/rene.jpg"
+          image= {post.Image}
           title="How is this?"
         />
         <CardContent>
@@ -77,17 +78,7 @@ const Post = props => {
           <IconButton aria-label="Add to favorites">
             <FavoriteIcon />
           </IconButton>
-          <IconButton aria-label="Share">
-            <ShareIcon />
-          </IconButton>
-          <IconButton
-            className={classnames(classes.expand)}
-            onClick={()=>console.log('press')}
-            aria-expanded={true}
-            aria-label="Show more"
-          >
-            <ExpandMoreIcon />
-          </IconButton>
+
         </CardActions>
         <Collapse in={true} timeout="auto" unmountOnExit>
           <CardContent>

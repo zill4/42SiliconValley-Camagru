@@ -10,15 +10,18 @@ const ImageViewer = props => {
 
  
     return (
-         <div>
-          <List>
-               {
-                    posts.posts.map((item, key) => {
-                         return <li key={key}> <Post/> </li>
-                    })
-               }
-          </List>
-         </div>
+     <div className="row">
+          {
+          posts.posts.map((item, key) => {
+               return(
+                    <div className="container" key={key}> 
+                         <div className="column">
+                              <Post post={item}/>
+                         </div>
+                    </div> 
+               )})
+          }
+     </div>
     );
 };
 
