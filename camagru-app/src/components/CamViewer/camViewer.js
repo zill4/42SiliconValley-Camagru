@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './camViewer.css';
 import Webcam from "react-webcam";
-
 class CamViewer extends React.Component {
     constructor(props)
     {
         super(props);
-        this.state = [];
+        this.state = {
+            images: []
+        }
 
     }
     setRef = webcam => {
@@ -15,11 +16,13 @@ class CamViewer extends React.Component {
      
       capture = () => {
         const imageSrc = this.webcam.getScreenshot();
-        this.state.push(imageSrc);
+        this.state.images.push(imageSrc);
+        this.setState(this.state);
         console.log(this.state);
       };
       
       render() {
+
         const videoConstraints = {
           width: 1280,
           height: 720,
@@ -28,8 +31,10 @@ class CamViewer extends React.Component {
 
         return (
           <div>
-              <div class="rightnav">
-                <img src={this.state ? <img src={this.state} /> : null} />
+            <div class = "rightnav">   
+                {this.state.images.map(item => 
+                <img src={item}/>
+                )}
             </div>
             <Webcam
               audio={false}
@@ -39,8 +44,6 @@ class CamViewer extends React.Component {
               width={480}
               videoConstraints={videoConstraints}
             />
-            
-
             <button onClick={this.capture}>Capture photo</button>
           </div>
         );

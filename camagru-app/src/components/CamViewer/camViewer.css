@@ -10,17 +10,16 @@
     padding-top: 20px;
   }
   
-  .rightnav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
+  .rightnav img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: '56.25%'; 
   }
   
-  .rightnav a:hover {
-    color: #f1f1f1;
-  }
   
   .main {
     margin-left: 160px; /* Same as the width of the sidenav */
