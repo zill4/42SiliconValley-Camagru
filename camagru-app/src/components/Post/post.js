@@ -20,8 +20,8 @@ import './post.css';
 
 const styles = theme => ({
     card: {
-      maxWidth: 250,
-      maxHeight: 450
+      maxWidth: 100,
+      maxHeight: 150
     },
     media: {
       height: '50%',
